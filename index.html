@@ -1,142 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saudi Bangla Update</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saudi Bangla Update</title>
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, Helvetica, sans-serif;
-        }
-
-        body{
-            background:#f5f5f5;
-        }
-
-        header{
-            background:#006c35;
-            color:white;
-            padding:20px;
-            text-align:center;
-        }
-
-        nav{
-            background:#004d25;
-            padding:15px;
-            text-align:center;
-        }
-
-        nav a{
-            color:white;
-            text-decoration:none;
-            margin:15px;
-            font-weight:bold;
-        }
-
-        .breaking{
-            background:red;
-            color:white;
-            padding:12px;
-            text-align:center;
-            font-weight:bold;
-        }
-
-        .container{
-            width:90%;
-            margin:30px auto;
-        }
-
-        .news{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-            gap:20px;
-        }
-
-        .card{
-            background:white;
-            border-radius:10px;
-            overflow:hidden;
-            box-shadow:0 0 10px rgba(0,0,0,.15);
-        }
-
-        .card img{
-            width:100%;
-            height:200px;
-            object-fit:cover;
-        }
-
-        .card h3{
-            padding:15px;
-            color:#006c35;
-        }
-
-        .card p{
-            padding:0 15px 20px;
-            color:#555;
-        }
-
-        footer{
-            background:#111;
-            color:white;
-            text-align:center;
-            padding:20px;
-            margin-top:40px;
-        }
-    </style>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+body{
+    background:#f5f5f5;
+}
+header{
+    background:#006400;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+}
+header h1{
+    font-size:32px;
+}
+header p{
+    margin-top:5px;
+}
+nav{
+    background:#111;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+nav a{
+    color:#fff;
+    text-decoration:none;
+    padding:15px;
+}
+nav a:hover{
+    background:red;
+}
+.breaking{
+    background:red;
+    color:#fff;
+    padding:10px;
+    font-weight:bold;
+    text-align:center;
+}
+.container{
+    width:95%;
+    max-width:1200px;
+    margin:20px auto;
+}
+.news-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+.card{
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+.card h2{
+    padding:15px;
+    font-size:22px;
+}
+.card p{
+    padding:0 15px 15px;
+}
+.btn{
+    display:inline-block;
+    margin:15px;
+    background:#006400;
+    color:#fff;
+    padding:10px 20px;
+    text-decoration:none;
+    border-radius:5px;
+}
+footer{
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>Saudi Bangla Update</h1>
-    <p>Trusted News for Bangladeshi Expats in Saudi Arabia</p>
+<h1>🇸🇦 Saudi Bangla Update</h1>
+<p>সৌদি আরবের সর্বশেষ খবর | Latest Saudi News</p>
 </header>
 
 <nav>
-    <a href="#">Home</a>
-    <a href="#">Breaking News</a>
-    <a href="#">Visa & Iqama</a>
-    <a href="#">Jobs</a>
-    <a href="#">Saudi News</a>
-    <a href="#">Contact</a>
+<a href="#">Home</a>
+<a href="#">Saudi News</a>
+<a href="#">Visa & Iqama</a>
+<a href="#">Jobs</a>
+<a href="#">Jawazat</a>
+<a href="#">Hajj & Umrah</a>
+<a href="#">Contact</a>
 </nav>
 
 <div class="breaking">
-🚨 Breaking News: Welcome to Saudi Bangla Update
+🚨 Breaking News | সৌদি আরবের সর্বশেষ আপডেট
 </div>
 
 <div class="container">
 
-<div class="news">
-
-<div class="card">
-<img src="https://picsum.photos/500/300?1">
-<h3>Saudi Government News</h3>
-<p>Latest Saudi government updates will appear here.</p>
+<div class="news-grid"><div class="card">
+<img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800" alt="Saudi News">
+<h2>🇸🇦 সৌদি আরবের সর্বশেষ খবর</h2>
+<p>
+সৌদি আরবের ভিসা, ইকামা, চাকরি, জাওয়াজাত এবং সরকারি
+সকল গুরুত্বপূর্ণ আপডেট বাংলায় ও ইংরেজিতে।
+</p>
+<a href="#" class="btn">Read More</a>
 </div>
 
 <div class="card">
-<img src="https://picsum.photos/500/300?2">
-<h3>Visa & Iqama</h3>
-<p>Visa, Iqama and Jawazat news will be published here.</p>
+<img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=800" alt="Visa">
+<h2>📄 Visa & Iqama Update</h2>
+<p>
+সর্বশেষ ভিসা, ইকামা নবায়ন, Exit/Re-entry এবং
+নতুন নিয়ম সম্পর্কে আপডেট।
+</p>
+<a href="#" class="btn">Read More</a>
 </div>
 
 <div class="card">
-<img src="https://picsum.photos/500/300?3">
-<h3>Jobs in Saudi Arabia</h3>
-<p>Latest Saudi job opportunities for Bangladeshis.</p>
+<img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800" alt="Jobs">
+<h2>💼 Saudi Jobs</h2>
+<p>
+সৌদি আরবের নতুন চাকরির খবর, কোম্পানি নিয়োগ এবং
+ওয়ার্ক ভিসার আপডেট।
+</p>
+<a href="#" class="btn">Read More</a>
+</div><div class="card">
+<img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800" alt="Jawazat">
+<h2>🛂 Jawazat Update</h2>
+<p>
+জাওয়াজাতের নতুন নিয়ম, ফাইন, ইকামা সংক্রান্ত সরকারি
+ঘোষণা এবং গুরুত্বপূর্ণ তথ্য।
+</p>
+<a href="#" class="btn">Read More</a>
 </div>
 
+<div class="card">
+<img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?w=800" alt="Hajj">
+<h2>🕋 Hajj & Umrah</h2>
+<p>
+হজ ও উমরাহ ভিসা, নিবন্ধন, ভ্রমণ এবং সর্বশেষ আপডেট।
+</p>
+<a href="#" class="btn">Read More</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800" alt="Contact">
+<h2>📞 Contact Us</h2>
+<p>
+আমাদের সাথে যোগাযোগ করতে ইমেইল বা সোশ্যাল মিডিয়ায়
+যোগাযোগ করুন।
+</p>
+<a href="#" class="btn">Contact</a>
 </div>
 
 </div>
 
 <footer>
-© 2026 Saudi Bangla Update | All Rights Reserved
+<p>© 2026 Saudi Bangla Update | All Rights Reserved</p>
+<p>বাংলা ও English-এ সৌদি আরবের সর্বশেষ খবর</p>
 </footer>
 
 </body>
