@@ -76,7 +76,22 @@ header p{
     border-bottom:1px solid #ddd;
     padding-bottom:10px;
 }
+.share{
+    margin-top:25px;
+    padding:15px;
+    background:#f1f1f1;
+    border-radius:10px;
+}
 
+.share a{
+    display:inline-block;
+    margin:5px;
+    padding:8px 15px;
+    background:#006400;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
 .back{
     display:inline-block;
     margin-top:20px;
@@ -159,7 +174,13 @@ header h1{
 <p>
 আমাদের লক্ষ্য হলো সৌদি আরবে বসবাসরত বাংলাদেশি প্রবাসীদের কাছে দ্রুত, সহজ ভাষায় এবং নির্ভরযোগ্য তথ্য পৌঁছে দেওয়া।
 </p>
+<div class="share">
+    <p>📲 Share News:</p>
 
+    <a href="#" onclick="shareWhatsApp()">🟢 WhatsApp</a>
+
+    <a href="#" onclick="shareFacebook()">🔵 Facebook</a>
+</div>
 <a href="index.html" class="back">⬅️ Back to Home</a>
 
 </div>
@@ -175,6 +196,29 @@ header h1{
 <a href="privacy.html">Privacy Policy</a>
 
 </footer>
+<script>
 
+function shareWhatsApp(){
+
+let text = "Saudi Bangla Update - Latest Saudi Arabia News";
+
+window.open(
+"https://wa.me/?text=" + text
+);
+
+}
+
+
+function shareFacebook(){
+
+let url = window.location.href;
+
+window.open(
+"https://www.facebook.com/sharer/sharer.php?u=" + url
+);
+
+}
+
+</script>
 </body>
 </html>
