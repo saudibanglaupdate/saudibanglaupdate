@@ -132,7 +132,7 @@ footer{
 <h1><img src="WhatsApp Image 2026-07-31 at 12.55.29 AM.jpeg" alt="Saudi Bangla Update Logo" style="height:100px;"></h1>
 <h1>Saudi Bangla Update</h1>
 <p>সৌদি আরবের সর্বশেষ খবর | Latest Saudi Arabia News</p>
-</header>
+</header><p id="date" style="text-align:center;font-weight:bold;"></p>
 
 <nav>
 <a href="#">Home</a>
@@ -216,6 +216,27 @@ footer{
 <p>© 2026 <img src="WhatsApp Image 2026-07-31 at 12.55.29 AM.jpeg" alt= Logo" style="height:70px;"> | All Rights Reserved</p>
 <p>বাংলা ও English-এ সৌদি আরবের সর্বশেষ খবর</p>
 </footer>
+<script>
+const searchBox = document.getElementById("searchBox");
+const cards = document.querySelectorAll(".card");
 
-</body>
+searchBox.addEventListener("keyup", function() {
+  let value = searchBox.value.toLowerCase();
+
+  cards.forEach(card => {
+    let text = card.innerText.toLowerCase();
+
+    if (text.includes(value)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
+</script>
+</body><script>
+const today = new Date();
+document.getElementById("date").innerHTML =
+"📅 " + today.toLocaleDateString("en-GB");
+</script>
 </html>
