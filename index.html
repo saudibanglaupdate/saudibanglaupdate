@@ -207,7 +207,7 @@ style="height:100px; width:100px; border-radius:50%; object-fit:cover; border:3p
 <a href="contact.html">📞 Contact</a>
 </nav><div class="search-box">
    <input id="searchBox" type="text" placeholder="🔍 খবর খুঁজুন...">
-<button>Search</button>
+<button onclick="searchNews()">Search</button>
 </div>
 
 <div class="categories">
@@ -338,6 +338,27 @@ function filterNews(category) {
 function darkMode(){
 
     document.body.classList.toggle("dark");
+
+}
+</script><script>
+function searchNews(){
+
+let value = document.getElementById("searchBox").value.toLowerCase();
+
+let cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+
+let text = card.innerText.toLowerCase();
+
+if(text.includes(value)){
+card.style.display="block";
+}
+else{
+card.style.display="none";
+}
+
+});
 
 }
 </script>
