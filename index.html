@@ -243,6 +243,18 @@ searchBox.addEventListener("keyup", function() {
 const today = new Date();
 document.getElementById("date").innerHTML =
 "📅 " + today.toLocaleDateString("en-GB");
-</script> 
+</script> <script>
+function filterNews(category) {
+  let cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    if (category == "all" || card.dataset.category == category) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+</script>
 </body>
 </html>
