@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Saudi Bangla News - Admin</title>
 
     <link rel="stylesheet" href="admin.css">
@@ -11,76 +12,130 @@
 <body>
 
     <div class="login-box">
+
         <h2>Admin Login</h2>
 
-        <input type="email" id="email" placeholder="Email">
+        <input
+            type="email"
+            id="email"
+            placeholder="Email"
+        >
 
-        <input type="password" id="password" placeholder="Password">
+        <input
+            type="password"
+            id="password"
+            placeholder="Password"
+        >
 
-        <button id="loginBtn">Login</button>
+        <button id="loginBtn">
+            Login
+        </button>
 
         <p id="message"></p>
+
     </div>
 
 
-    <!-- Supabase -->
+    <!-- Supabase Library -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    <!-- Our Supabase connection -->
-    <script src="../supabase.js"></script>
 
-
-    <!-- Login -->
     <script>
 
-        const loginBtn = document.getElementById("loginBtn");
-        const message = document.getElementById("message");
+        // Supabase connection
+        const SUPABASE_URL =
+            "https://dgghthghqfdgnehmosyy.supabase.co";
 
-        loginBtn.onclick = async function () {
+        const SUPABASE_KEY =
+            "sb_publishable_GgmNhRBZDRtCXryfGqQIuQ_66EJmtoF";
 
-            message.textContent = "Logging in...";
-            message.style.color = "black";
+        const supabaseClient =
+            window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_KEY
+            );
 
-            const email = document.getElementById("email").value.trim();
-            const password = document.getElementById("password").value;
+
+        // Login elements
+        const loginBtn =
+            document.getElementById("loginBtn");
+
+        const message =
+            document.getElementById("message");
+
+
+        // Login
+        loginBtn.addEventListener("click", async function () {
+
+            const email =
+                document.getElementById("email").value.trim();
+
+            const password =
+                document.getElementById("password").value;
+
 
             if (!email || !password) {
-                message.textContent = "Please enter email and password.";
+
                 message.style.color = "red";
+
+                message.textContent =
+                    "Please enter email and password.";
+
                 return;
             }
+
+
+            message.style.color = "black";
+
+            message.textContent =
+                "Logging in...";
+
 
             try {
 
                 const { data, error } =
-                    await supabase.auth.signInWithPassword({
+                    await supabaseClient.auth.signInWithPassword({
+
                         email: email,
+
                         password: password
+
                     });
+
 
                 if (error) {
 
                     console.error(error);
 
-                    message.textContent = error.message;
                     message.style.color = "red";
+
+                    message.textContent =
+                        error.message;
 
                     return;
                 }
 
-                console.log(data);
 
-                message.textContent = "Login Successful!";
+                console.log("Login successful:", data);
+
                 message.style.color = "green";
+
+                message.textContent =
+                    "Login Successful!";
+
 
             } catch (error) {
 
                 console.error(error);
 
-                message.textContent = error.message;
                 message.style.color = "red";
+
+                message.textContent =
+                    error.message;
+
             }
-        };
+
+        });
 
     </script>
 
