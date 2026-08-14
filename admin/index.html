@@ -7,12 +7,14 @@
 
     <link rel="stylesheet" href="admin.css">
 </head>
+
 <body>
 
     <div class="login-box">
         <h2>Admin Login</h2>
 
         <input type="email" id="email" placeholder="Email">
+
         <input type="password" id="password" placeholder="Password">
 
         <button id="loginBtn">Login</button>
@@ -20,13 +22,67 @@
         <p id="message"></p>
     </div>
 
+
+    <!-- Supabase -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="../supabase.js"></script>
-<script src="admin.js"></script>
-  
- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="../supabase.js"></script>
-<script src="admin.js"></script>
-    
+
+    <!-- Our Supabase connection -->
+    <script src="../supabase.js"></script>
+
+
+    <!-- Login -->
+    <script>
+
+        const loginBtn = document.getElementById("loginBtn");
+        const message = document.getElementById("message");
+
+        loginBtn.onclick = async function () {
+
+            message.textContent = "Logging in...";
+            message.style.color = "black";
+
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;
+
+            if (!email || !password) {
+                message.textContent = "Please enter email and password.";
+                message.style.color = "red";
+                return;
+            }
+
+            try {
+
+                const { data, error } =
+                    await supabase.auth.signInWithPassword({
+                        email: email,
+                        password: password
+                    });
+
+                if (error) {
+
+                    console.error(error);
+
+                    message.textContent = error.message;
+                    message.style.color = "red";
+
+                    return;
+                }
+
+                console.log(data);
+
+                message.textContent = "Login Successful!";
+                message.style.color = "green";
+
+            } catch (error) {
+
+                console.error(error);
+
+                message.textContent = error.message;
+                message.style.color = "red";
+            }
+        };
+
+    </script>
+
 </body>
 </html>
